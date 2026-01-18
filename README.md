@@ -7,5 +7,5 @@
 3. Fill the vendor.
 
 ```Bash
-pip install -r vendor_BiblicalReference_requirements.txt --target ./vendor_BiblicalReference
+pip install -r vendor_requirements.txt --target ./vendor_BiblicalReference
 ```
