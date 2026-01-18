@@ -1,0 +1,59 @@
+Table book {
+    id int [pk, increment]
+    testement varchar(15)
+    group varchar(255)
+    name varchar(255)
+}
+
+Table title {
+    id int [pk, increment]
+    id_book int [ref: > book.id]
+    lang_iso char(3)
+    title_text varchar(255)
+    indexes {
+        title_text [name: "idx_title"]
+    }
+}
+
+Table structure {
+    id int [pk, increment]
+    id_book int [ref: > book.id]
+    chapter_no int
+    verse_no int
+    indexes {
+        (id_book, chapter_no, verse_no) [name:"idx_verse"]
+    }
+}
+
+Table translation {
+    id int [pk, increment]
+    name varchar(255)
+    code varchar(7) [unique]
+    lang_iso char(3)
+    indexes {
+        code [name: "idx_translation_code"]
+    }
+}
+
+Table verse {
+    id_translation int [ref: > translation.id]
+    id_structure int [ref: > structure.id]
+    verse_text text
+    indexes {
+        (id_translation, id_structure) [pk, name:"idx_translated_verse"]
+    }
+}
+
+Table pericope {
+    id int [pk, increment]
+    id_translation int [ref: > translation.id]
+    pericope_text varchar(255)
+}
+
+Table pericope_structure {
+    id_structure int [ref: > structure.id]
+    id_pericope int [ref: > pericope.id]
+    indexes {
+        (id_structure, id_pericope) [pk, name:"idx_verse_pericope"]
+    }
+}

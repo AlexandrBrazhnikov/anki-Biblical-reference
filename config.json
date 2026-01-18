@@ -1,0 +1,13 @@
+{
+    "00_book": ["Biblical Reference", "([\\w.\\s]+), \\d+:\\d+", "body"],
+    "00_chapter": ["Biblical Reference", "[\\w.\\s]+, (\\d+):\\d+", "body"],
+    "00_verse": ["Biblical Reference", "[\\w.\\s]+, \\d+:(\\d+)", "body"],
+    "01_rewrite_fields": true,
+    "02_output_fields": {
+        "Synodal Translation": "SYNO",
+        "KJV Translation": "KJV"
+    },
+    "03_book_aliases": {
+        "The Gospel of Mark": "The Gospel According to Saint Mark"
+    }
+}
