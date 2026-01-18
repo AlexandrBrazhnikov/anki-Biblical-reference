@@ -1,6 +1,7 @@
 {
     "name": "Biblical Reference",
-    "mod": 123456789,
+    "mod": 1639590852,
+    "package": "biblical_reference",
     "min_version": 240400,
     "max_version": 0,
     "human_version": "1.0.0"
